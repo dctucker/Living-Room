@@ -1,23 +1,106 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Living Room-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller title="Living Room" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Living_Room_WatchKit_Extension">
+                    <items>
+                        <label width="1" height="100" alignment="center" verticalAlignment="center" text="-27.0 dB" textAlignment="center" baselineAdjustment="alignCenters" id="O4i-zN-3uR">
+                            <color key="textColor" red="0.0" green="0.98010850960029927" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" type="system" weight="ultraLight" pointSize="36"/>
+                        </label>
+                        <slider width="1" alignment="center" verticalAlignment="bottom" semanticContentAttribute="forceLeftToRight" continuous="YES" value="-270" minimum="-600" maximum="120" steps="144" id="sY2-Yc-dtL">
+                            <accessibilityTraits key="accessibilityTraits" selected="YES" updatesFrequently="YES"/>
+                            <color key="color" red="0.0" green="0.98010850959999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="valueSliderChanged:" destination="AgC-eL-Hgc" id="Kph-vO-RgM"/>
+                            </connections>
+                        </slider>
+                    </items>
+                    <connections>
+                        <outlet property="valueLabel" destination="O4i-zN-3uR" id="eh6-n3-ieO"/>
+                        <outlet property="valueSlider" destination="sY2-Yc-dtL" id="xs1-jH-6pA"/>
+                        <segue destination="A5Y-1e-LMh" kind="relationship" relationship="nextPage" id="DPO-TE-pOs"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Living Room-->
+        <scene sceneID="Ela-Su-Qy9">
+            <objects>
+                <controller title="Living Room" id="A5Y-1e-LMh" customClass="CursorController" customModule="Living_Room_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="0.33000000000000002" alignment="left" verticalAlignment="center" id="Xs7-Eg-V0M">
+                            <items>
+                                <button width="0.33000000000000002" height="1" alignment="center" title="↑" id="czm-Oo-dZd">
+                                    <fontDescription key="font" type="system" weight="black" pointSize="24"/>
+                                    <connections>
+                                        <action selector="upButton" destination="A5Y-1e-LMh" id="bnC-vn-T87"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="0.33000000000000002" alignment="left" verticalAlignment="center" id="gHm-wd-A9I">
+                            <items>
+                                <button width="0.33000000000000002" height="1" alignment="left" verticalAlignment="center" title="←" id="d33-Id-wfx">
+                                    <fontDescription key="font" type="system" weight="black" pointSize="24"/>
+                                    <connections>
+                                        <action selector="leftButton" destination="A5Y-1e-LMh" id="NJ4-rN-9Gw"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="1" alignment="right" verticalAlignment="center" title="→" id="ej5-TE-7YK">
+                                    <fontDescription key="font" type="system" weight="black" pointSize="24"/>
+                                    <connections>
+                                        <action selector="rightButton" destination="A5Y-1e-LMh" id="Kqv-N7-IoG"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="center" title="✅" id="Zkf-SX-0dE">
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="font" type="system" weight="black" pointSize="24"/>
+                                    <connections>
+                                        <action selector="enterButton" destination="A5Y-1e-LMh" id="EUv-Xk-3JP"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="0.33000000000000002" alignment="left" verticalAlignment="center" id="MHg-cG-49E">
+                            <items>
+                                <button width="0.29999999999999999" height="0.90000000000000002" alignment="left" verticalAlignment="bottom" title="🚫" id="U1B-uo-OTK">
+                                    <color key="backgroundColor" red="0.29274611398963735" green="0.063452182661153267" blue="0.054714032232493735" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" weight="black" pointSize="24"/>
+                                    <connections>
+                                        <action selector="backButton" destination="A5Y-1e-LMh" id="J54-xa-3ou"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="1" alignment="center" verticalAlignment="bottom" title="↓" id="XhF-Zw-NWQ">
+                                    <fontDescription key="font" type="system" weight="black" pointSize="24"/>
+                                    <connections>
+                                        <action selector="downButton" destination="A5Y-1e-LMh" id="Tjh-A8-kpZ"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="461" y="345"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
             <objects>
                 <notificationController id="YCC-NB-fut">
                     <items>
-                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                        <label alignment="left" text="Alert Lab" id="IdU-wH-bcW"/>
                     </items>
                     <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
                     <connections>
@@ -31,7 +114,7 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Living_Room_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>

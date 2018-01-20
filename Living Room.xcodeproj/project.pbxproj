@@ -23,6 +23,11 @@
 		C9CF9114200EC35100B996BF /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CF9113200EC35100B996BF /* NotificationController.swift */; };
 		C9CF9116200EC35100B996BF /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CF9115200EC35100B996BF /* ComplicationController.swift */; };
 		C9CF9118200EC35100B996BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9CF9117200EC35100B996BF /* Assets.xcassets */; };
+		C9CF913020102AB300B996BF /* CursorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CF912F20102AB300B996BF /* CursorController.swift */; };
+		C9CF913220107E0800B996BF /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CF913120107E0800B996BF /* SessionDelegate.swift */; };
+		C9CF91342012D62100B996BF /* Comm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CF91332012D62100B996BF /* Comm.swift */; };
+		C9CF91352012DCBA00B996BF /* Comm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CF91332012D62100B996BF /* Comm.swift */; };
+		C9CF91362012E2A600B996BF /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CF913120107E0800B996BF /* SessionDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +112,10 @@
 		C9CF9117200EC35100B996BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9CF9119200EC35100B996BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9CF911A200EC35100B996BF /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		C9CF912E200EE0B200B996BF /* Living Room.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Living Room.entitlements"; sourceTree = "<group>"; };
+		C9CF912F20102AB300B996BF /* CursorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorController.swift; sourceTree = "<group>"; };
+		C9CF913120107E0800B996BF /* SessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
+		C9CF91332012D62100B996BF /* Comm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +177,7 @@
 		C9CF90D5200EC35000B996BF /* Living Room */ = {
 			isa = PBXGroup;
 			children = (
+				C9CF912E200EE0B200B996BF /* Living Room.entitlements */,
 				C9CF90D6200EC35000B996BF /* AppDelegate.swift */,
 				C9CF90D8200EC35000B996BF /* ViewController.swift */,
 				C9CF90DA200EC35100B996BF /* Main.storyboard */,
@@ -210,7 +220,10 @@
 			isa = PBXGroup;
 			children = (
 				C9CF910F200EC35100B996BF /* InterfaceController.swift */,
+				C9CF912F20102AB300B996BF /* CursorController.swift */,
 				C9CF9111200EC35100B996BF /* ExtensionDelegate.swift */,
+				C9CF913120107E0800B996BF /* SessionDelegate.swift */,
+				C9CF91332012D62100B996BF /* Comm.swift */,
 				C9CF9113200EC35100B996BF /* NotificationController.swift */,
 				C9CF9115200EC35100B996BF /* ComplicationController.swift */,
 				C9CF9117200EC35100B996BF /* Assets.xcassets */,
@@ -325,6 +338,11 @@
 					C9CF90D2200EC35000B996BF = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					C9CF90E6200EC35100B996BF = {
 						CreatedOnToolsVersion = 9.2;
@@ -417,8 +435,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9CF91352012DCBA00B996BF /* Comm.swift in Sources */,
 				C9CF90D9200EC35000B996BF /* ViewController.swift in Sources */,
 				C9CF90D7200EC35000B996BF /* AppDelegate.swift in Sources */,
+				C9CF91362012E2A600B996BF /* SessionDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +464,10 @@
 			files = (
 				C9CF9114200EC35100B996BF /* NotificationController.swift in Sources */,
 				C9CF9116200EC35100B996BF /* ComplicationController.swift in Sources */,
+				C9CF913020102AB300B996BF /* CursorController.swift in Sources */,
+				C9CF913220107E0800B996BF /* SessionDelegate.swift in Sources */,
 				C9CF9112200EC35100B996BF /* ExtensionDelegate.swift in Sources */,
+				C9CF91342012D62100B996BF /* Comm.swift in Sources */,
 				C9CF9110200EC35100B996BF /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -687,6 +710,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Living Room/Living Room.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NR8K6L4EN9;
 				INFOPLIST_FILE = "Living Room/Info.plist";
@@ -702,6 +726,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Living Room/Living Room.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NR8K6L4EN9;
 				INFOPLIST_FILE = "Living Room/Info.plist";
